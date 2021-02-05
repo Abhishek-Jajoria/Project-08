@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="images/favicon.png" type="image/gif" sizes="16x16">
+    <title>Project-8</title>
+</head>
+<body>
+    <div id="hero">
+        <div class="navbar">
+            <a href="https://abhishek-jajoria.github.io/AbhishekJajoria/" target="blank"><img src="/images/logo.png" alt="Logo" class="logo"></a>
+            <div class="user">
+                <a href="https://abhishek-jajoria.github.io/AbhishekJajoria/" target="blank"><button type="button">Explore</button></a>
+                <a href="https://abhishek-jajoria.github.io/AbhishekJajoria/about.html" target="blank"><img src="images/AJ.jpg" alt="" class="logo" id="profilePhoto"></a>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="info">
+                <h1>DISCOVER</h1>
+                <p>Hello everyone. My name is Abhishek Jajoria. right now I'm learning html, CSS, javascript, jquery and bootstrap. So I want decide to test my Programming skills. That's why I'm Creating this Website. If you like this website you can submit a positive comment on the Contact Page and If you like to support me please follow me on Instagram and facebook. Thankyou</p>
+                <input type="text" placeholder="Seach">
+            </div>
+        </div>
+
+        <div class="slider">
+            <img src="../images/arrowLeft.png" alt="" id="prev">
+            <div class="preview">
+                <img src="images/bg1.jpg" alt="" class='active thumbnail'>
+                <img src="images/bg2.jpg" alt="" class='thumbnail'>
+                <img src="images/bg3.jpg" alt="" class='thumbnail'>
+                <img src="images/bg4.jpg" alt="" class='thumbnail'>
+                <img src="images/bg5.jpg" alt="" class='thumbnail'>
+            </div>
+            <img src="../images/arrowRight.png" alt="" id="next">
+        </div>
+
+    </div>
+
+    <script>
+
+        var prev =document.getElementById('prev');
+        var next =document.getElementById('next');
+        var thumbnail = document.getElementsByClassName('thumbnail');
+        var hero = document.getElementById('hero');
+
+        var backgroundImg = new Array(
+            '/images/bg1.jpg',
+            '/images/bg2.jpg',
+            '/images/bg3.jpg',
+            '/images/bg4.jpg',
+            '/images/bg5.jpg',
+        );
+        let i = 0;
+        next.onclick = function(){
+            if (i<4){
+            hero.style.backgroundImage = 'url("'+ backgroundImg[i+1]+'")';
+            thumbnail[i+1].classList.add('active');
+            thumbnail[i].classList.remove('active');
+            i++;
+            }
+        }
+        prev.onclick = function(){
+            if (i>0){
+            hero.style.backgroundImage = 'url("'+ backgroundImg[i-1]+'")';
+            thumbnail[i-1].classList.add('active');
+            thumbnail[i].classList.remove('active');
+            i--;
+            }
+        }
+    </script>
+    
+</body>
+</html>
